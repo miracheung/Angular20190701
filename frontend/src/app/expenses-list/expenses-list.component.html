@@ -1,0 +1,38 @@
+
+<h2>Expenses</h2>
+<button class="btn btn-danger" (click)="onSelectLogout()">Logout</button>
+<br>
+<button class="btn btn-success" routerLink="/new" routerLinkActive="active">Add Expense</button>
+<button class="btn btn-primary" (click)="onSelectGraph()">Graphics</button>
+<br>
+    <h3>{{errorMsg}}</h3>
+<table class="table table-hover">
+    <thead>
+      <tr>
+      <th>ID</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Type</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let expense of expenses" >
+        <td>{{expense.id}}</td>
+        <td>{{expense.description}}</td>
+        <td>{{expense.amount}}</td>
+        <td>{{expense.types}}</td>
+        <td>{{expense.date}}</td>
+        <td >
+          <button class="btn btn-primary" (click)="onSelectEdit(expense)">Edit</button>
+          <button class="btn btn-danger" (click)="onSelectDelete(expense)">Delete</button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
+          
+
+
+
